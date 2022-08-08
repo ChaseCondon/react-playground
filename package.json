@@ -1,5 +1,5 @@
 {
-  "name": "react-playground",
+  "name": "react-sandbox",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "firebase": "^9.9.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -18,7 +19,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:docker": "docker run --name react-playground-container -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true react-playground:dev",
+    "start:docker": "docker run --name react-sandbox-container -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true chasecondon/react-sandbox:latest",
+    "build:docker": "docker build -t chasecondon/react-sandbox .",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -40,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass": "^1.54.0"
   }
 }
